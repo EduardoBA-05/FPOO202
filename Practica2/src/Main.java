@@ -54,7 +54,7 @@ public class Main {
         int i= 12;
         double numd= i;
         System.out.println(numd);// Solo funciona en datos númericos
-*/
+
 
 
 //        4. Solicitud de datos
@@ -83,7 +83,7 @@ public class Main {
         System.out.println(10 >= 9);
         System.out.println(10 <= 9);
         System.out.println(10 != 9);
-*/
+
 
         // operadores logicos
         int x= 3;
@@ -91,7 +91,7 @@ public class Main {
         System.out.println(x<5 || x>10); //true
         System.out.println(!(x<5 && x>10)); //true
         System.out.println(!(x<5 || x>10)); //false
-
+*/
         }
 
     }
