@@ -12,7 +12,7 @@ public class Ejercicio6 {
         String invertida;
 
         invertida = new StringBuilder(frase).reverse().toString();
-        System.out.println("La frase invertida termina de esta forma: "+);
+        System.out.println("La frase invertida termina de esta forma: "+ invertida);
 
     }
 }
