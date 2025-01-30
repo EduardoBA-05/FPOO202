@@ -11,9 +11,7 @@ public class Ejercicio4 {
 
                NOMBRE = nombre.toUpperCase();
                letras = nombre.replaceAll("\\s+", "").length();
-
                System.out.println(NOMBRE + " tiene "+ letras + " letras.");
                scn.close();
-
     }
 }

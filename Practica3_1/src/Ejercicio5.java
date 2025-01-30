@@ -13,14 +13,10 @@ public class Ejercicio5 {
 
         System.out.println("Ingresa la cantidad de munecas comprados: ");
         munecas = scn.nextInt();
-
         peso_payaso = payasos * 112;
         peso_muneca = munecas * 75;
-
         total = peso_payaso + peso_muneca;
-
         System.out.println("El peso del paquete es de: "+ total + " gramos");
 
     }
-
 }
