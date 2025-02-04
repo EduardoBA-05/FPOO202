@@ -5,7 +5,7 @@ public class Ejercicio2 {
         Scanner scn = new Scanner(System.in);
 
         String palabra;
-        String letra;
+        char letra;
 
         System.out.print("Ingresa una palabra: ");
         palabra = scn.nextLine();
@@ -14,11 +14,15 @@ public class Ejercicio2 {
 
         scn.close();
 
+System.out.print("Resultado: ");
 
         for (int i =0; i<palabra.length(); i++ ){
 
-            System.out.print("Letra" +i);
+            System.out.print("  Letra  " +i + ":");
 
+            letra = palabra.charAt(i);
+
+            System.out.print(" " + letra );
 
 
         }
