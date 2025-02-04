@@ -1,5 +1,4 @@
 import java.util.Scanner;
-
 public class Ejercicio5 {
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
@@ -23,6 +22,7 @@ public class Ejercicio5 {
 
             }
         }
-            System.out.println("La letra " + letra + "  se repite en la frase " + contador + " veces");
+        System.out.println("La letra " + letra + " se repite en la frase " +
+                contador + " veces");
     }
-}
+    }
