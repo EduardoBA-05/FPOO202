@@ -60,7 +60,5 @@ public class App {
         if(longitud >= 12) fortaleza++;
         if(mayusculas) fortaleza++;
         if(CaracteresEsp) fortaleza++;
-
-
     }
 }

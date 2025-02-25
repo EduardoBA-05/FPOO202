@@ -13,17 +13,17 @@ public class Cuenta {
         this.titular = titular;
         this.edad = edad;
         this.saldo = saldo;
-    }
+    }//Cuenta
 
     public void ConsultarSaldo() {
         JOptionPane.showMessageDialog(null, "El saldo de tu cuenta es: " + saldo);
-    }
+    }//Consultar
 
     public void Ingresar(){
         monto = Double.parseDouble(JOptionPane.showInputDialog("Ingresa la cantidad de tu monto: "));
         saldo = saldo + monto;
         JOptionPane.showMessageDialog(null,"El saldo es ahora de: " + saldo);
-    }
+    }//Ingresar
 
     public void Retirar(){
         double retiro;
@@ -35,7 +35,7 @@ public class Cuenta {
             saldo = saldo - retiro;
             JOptionPane.showMessageDialog(null,"Tu saldo es: " + saldo);
         }
-    }
+    }//Retirar
 
     public void Depositar(Cuenta otraCuenta){
         double monto = Double.parseDouble(JOptionPane.showInputDialog("Ingresa la cantidad de tu monto a depositar: "));
@@ -49,7 +49,6 @@ public class Cuenta {
             JOptionPane.showMessageDialog(null, "Deposito realizado con éxito. Tu saldo es: " +saldo);
         }
     }//Depositar
-
 
 }
 

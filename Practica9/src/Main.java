@@ -2,13 +2,10 @@ import javax.swing.JOptionPane;
 
 public class Main {
     public static void main(String[] args) {
-
         Cuenta cuenta1 = new Cuenta(123123,"Eduardo Badillo", 20, 1000);
         Cuenta cuenta2 = new Cuenta(456456, "Juan Olvera",19,4000);
 
-
         int opcion;
-
         do{
             opcion= Integer.parseInt(JOptionPane.showInputDialog("Selecciona una opcion: \n" +
                     "1. Consultar saldo\n"+
