@@ -10,13 +10,14 @@ public class App {
 
 
 
-    public void IngresarLongitud(int longitud){
+    public void IngresarLongitud(){
 
-        longitud = Integer.parseInt(JOptionPane.showInputDialog("Ingresa la cantidad de caracterers de tu contraseña: "));
+        String input = JOptionPane.showInputDialog("Ingresa la cantidad de caracterers de tu contraseña: ");
 
-        if(longitud<=8){
-            longitud=8;
-        }
+       if(input==null || input.trim().isEmpty()){
+           JOptionPane.showMessageDialog(null, "No se ingreso un valor. El password sera por defecto de 8 caracteres ");
+           longitud = 8;
+       }
 
     }//IngresarLongitud
 
@@ -45,7 +46,7 @@ public class App {
 
         Random random = new Random();
 
-        for(int i = 10; i <=longitud ; i++  ){
+        for(int i = 1; i <=longitud ; i++  ){
 
             password+=caracteres.charAt(random.nextInt(caracteres.length()));
 
@@ -60,5 +61,15 @@ public class App {
         if(longitud >= 12) fortaleza++;
         if(mayusculas) fortaleza++;
         if(CaracteresEsp) fortaleza++;
+
+        if (fortaleza == 1) {
+            JOptionPane.showMessageDialog(null, "El password es muy fuerte");
+        } else if (fortaleza == 2) {
+            JOptionPane.showMessageDialog(null, "El password es fuerte");
+        } else if (fortaleza == 3) {
+            JOptionPane.showMessageDialog(null, "El password es debil");
+        } else {
+            JOptionPane.showMessageDialog(null, "El password es muy debil");
+        }
     }
 }
