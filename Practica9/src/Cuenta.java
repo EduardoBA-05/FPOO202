@@ -1,19 +1,21 @@
 import javax.swing.JOptionPane;
 
 public class Cuenta {
-    int NoCuenta;
-    public double saldo;
-    public int edad;
-    public String titular;
-    public double monto;
+   private int NoCuenta;
+    private double saldo;
+    private int edad;
+    private String titular;
+    private double monto;
 
-
+//Constructor
     public Cuenta(int NoCuenta, String titular, int edad, double saldo){
         this.NoCuenta = NoCuenta;
         this.titular = titular;
         this.edad = edad;
         this.saldo = saldo;
     }//Cuenta
+
+
 
     public void ConsultarSaldo() {
         JOptionPane.showMessageDialog(null, "El saldo de tu cuenta es: " + saldo);
@@ -50,5 +52,37 @@ public class Cuenta {
         }
     }//Depositar
 
+
+    //GETTERS AND SETTERS
+    public int getNoCuenta() {
+        return NoCuenta;
+    }
+    public void setNoCuenta(int noCuenta) {
+        NoCuenta = noCuenta;
+    }
+    public double getSaldo() {
+        return saldo;
+    }
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+    public int getEdad() {
+        return edad;
+    }
+    public void setEdad(int edad) {
+        this.edad = edad;
+    }
+    public String getTitular() {
+        return titular;
+    }
+    public void setTitular(String titular) {
+        this.titular = titular;
+    }
+    public double getMonto() {
+        return monto;
+    }
+    public void setMonto(double monto) {
+        this.monto = monto;
+    }
 }
 
