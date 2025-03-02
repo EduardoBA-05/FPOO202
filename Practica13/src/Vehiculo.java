@@ -29,6 +29,41 @@ public class Vehiculo {
 
     }
 
+    //Metodo asignar Conductor
+
+    public  void asignarConductor(Conductor conductor){
+        this.conductor = conductor;
+    }
+
+
+    //Metodo mostrarInformación
+
+    public void mostrarInformacion(){
+
+        String info = "Información del Vehículo: \n" +
+                "Placa: " + placa + "\n"+
+                "Modelo: " + modelo + "\n" +
+                "Capacidad de Carga: " + capacidadCarga + "Kg\n";
+
+        if (conductor != null){
+            info += "Conductor Asignado:\n"+
+                    " Nombre: " + conductor.getNombre() + "\n" +
+                    "Identificacion: " + conductor.getIdentificacion() + "\n" +
+                    " Licencia: " + conductor.getLicencia() + "\n";
+        }else {
+            info+= "No hay conductor asignado. \n";
+        }
+        JOptionPane.showMessageDialog(null, info);
+    }
+
+    //Metodo ingresarVehiculo
+    public static Vehiculo ingresarVehiculo() {
+        String placa = JOptionPane.showInputDialog("Ingresa la placa del vehiculo: ");
+        String modelo = JOptionPane.showInputDialog("Ingresa el modelo del vehiculo: ");
+        double capacidadCarga = Double.parseDouble(JOptionPane.showInputDialog("Ingresa la capacidad de carga del vehiculo (kg): "));
+
+        return new Vehiculo(placa,modelo,capacidadCarga);
+    }
 
     //SETTERS AND GETTERS
     public String getPlaca() {
