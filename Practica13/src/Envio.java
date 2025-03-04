@@ -5,15 +5,11 @@ public class Envio {
     private String destino;
     private double peso;
 
-
-
-
     //Constructores sobrecargados
     public Envio(String codigoEnvio, String destino) {
         this.codigoEnvio = codigoEnvio;
         this.destino = destino;
     }
-
 
     //Constructores sobrecargados
     public Envio(String codigoEnvio, String destino, double peso) {

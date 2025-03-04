@@ -7,8 +7,6 @@ public class Vehiculo {
     private double capacidadCarga;
     private Conductor conductor;
 
-
-
     //Constructor
     public Vehiculo(String placa, String modelo, double capacidadCarga) {
         this.placa = placa;
@@ -16,12 +14,9 @@ public class Vehiculo {
         this.capacidadCarga = capacidadCarga;
     }
 
-
-
     //Metodo IngresarVehiculo
 
     public void IngresarVehiculo(){
-
         placa = JOptionPane.showInputDialog("Ingresa la placa de tu vehiculo: ");
         modelo = JOptionPane.showInputDialog("Ingresa el modelo de tu vehiculo: ");
         capacidadCarga = Double.parseDouble(JOptionPane.showInputDialog("Ingresa la capacidad de carga de tu vehiculo: "));

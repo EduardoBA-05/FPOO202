@@ -18,12 +18,9 @@ public class Main {
                     "7. Mostrar Información" + "\n"+
                     "8. Salir" + "\n");
 
-
-
             if (opcion == null || opcion.equals("8")){
                 break;
             }
-
             switch (opcion){
 
                     case "1":
@@ -73,9 +70,6 @@ public class Main {
                     }else {
                             JOptionPane.showMessageDialog(null,"Primero debe registrar un vehiculo");
                     }
-                    break;
-                case "8":
-                    JOptionPane.showMessageDialog(null,"Hasta luego");
                     break;
 
                 default:
