@@ -15,7 +15,7 @@ public class Spartan extends Soldado {
                 escudo = 0;
             }//escudo <0
 
-            System.out.println(nombre + " Recibió daño: " + escudo+" Salud: "+salud);
+            System.out.println(nombre + " Recibió daño: " + escudo + " Salud: "+salud);
 
         }//escudo>0
         else {
