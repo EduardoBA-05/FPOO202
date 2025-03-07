@@ -1,4 +1,4 @@
-import javax.swing.*;
+import javax.swing.JOptionPane;
 
 public class Conductor extends Empleado{
 
@@ -14,16 +14,13 @@ public class Conductor extends Empleado{
     @Override
     public void mostrarInfo(){
         String info =
-                 "Licencia: " + licencia;
+                "Datos Conductor: \n"+
+                        "ID: "+ getId() +"\n"+
+                        "Nombre: "+ getNombre() +"\n"+
+                        "Salario: "+ getSalario() +"\n"+
+                 "Licencia: " + licencia + "\n";
 
         JOptionPane.showMessageDialog(null, info);
-    }
-@Override
-    public Empleado IngresarEmpleado(){
-
-        licencia = JOptionPane.showInputDialog("Ingresa la licencia:  ");
-
-
     }
 
 

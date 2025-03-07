@@ -1,12 +1,11 @@
 import javax.swing.JOptionPane;
-import java.util.ArrayList;
 
 
 public class Empleado {
     private String nombre;
     private int id;
     private double salario;
-    ArrayList<String> empleados = new ArrayList<String>();
+
 
 //Constructor
     public Empleado(String nombre, int id, double salario) {
@@ -24,6 +23,17 @@ public class Empleado {
 
         JOptionPane.showMessageDialog(null,info);
     }
-    
 
+    //GETTERS Atributos
+    public String getNombre() {
+        return nombre;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public double getSalario() {
+        return salario;
+    }
 }

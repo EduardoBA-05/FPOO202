@@ -13,10 +13,16 @@ public class Administrativo extends Empleado {
     @Override
     public void mostrarInfo(){
         String info =
-                "Departamento: " + departamento;
+                "Datos Administrativo: \n"+
+                        "ID: "+ getId() +"\n"+
+                        "Nombre: "+ getNombre() +"\n"+
+                        "Salario: "+ getSalario() +"\n"+
+                "Departamento: " + departamento + "\n";
 
         JOptionPane.showMessageDialog(null, info);
     }
+
+
 
 
 
