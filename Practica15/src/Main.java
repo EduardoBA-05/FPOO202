@@ -40,7 +40,6 @@ public class Main {
                    empleados.add(new Administrativo(nombreA,idA,salarioA,departamento));
                    break;
 
-
                case "3":
                    StringBuilder listaEmpleados = new StringBuilder("Listado de Empleados: \n");
 
@@ -48,14 +47,12 @@ public class Main {
                                     emp.mostrarInfo();
                                 }
                                 break;
-
                default:
                    JOptionPane.showMessageDialog(null, "Opción inválida");
 
                 break;
 
            }
-
        }
     }
 }

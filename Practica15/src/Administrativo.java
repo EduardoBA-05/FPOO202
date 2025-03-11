@@ -22,8 +22,4 @@ public class Administrativo extends Empleado {
         JOptionPane.showMessageDialog(null, info);
     }
 
-
-
-
-
 }
