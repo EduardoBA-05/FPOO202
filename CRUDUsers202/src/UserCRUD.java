@@ -7,6 +7,39 @@
  *
  * @author HP
  */
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
 public class UserCRUD {
     
+    private Connection conexion;
+    
+    public UserCRUD(){
+        conexion = ConexionMySQL.conectar();
+       
+    }
+    
+    public boolean crearUsuario(String nom,String cor, String contra){
+        String sqlInsert = "INSERT INTO usuarios(nombre,correo,contrasena) VALUE(?,?,?)"; // se crea una variable para leer/almacenar los valores ingresados en la base de datos
+       
+
+// Se utiliza para el manejo de las excepciones, EN caso de error no se rompe el código, ya que esta
+       // estructura permite controlar las expeciones y/o errores.
+        
+       try{
+            PreparedStatement ps = conexion.prepareStatement(sqlInsert);
+            ps.setString(1, nom); 
+            ps.setString(2, cor);
+            ps.setString(3, contra);
+            return ps.executeUpdate()> 0; 
+              } //try
+            
+       catch(SQLException e){ // SQLException e en caso de que no se inserten los valores
+                    System.out.println("Error al intentar insertar"+ e.getMessage());
+                    return false;
+                    }//catch
+      
+        
+    }
 }

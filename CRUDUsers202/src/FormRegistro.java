@@ -75,10 +75,20 @@ public class FormRegistro extends javax.swing.JFrame {
         btnGuardar.setBackground(new java.awt.Color(102, 153, 255));
         btnGuardar.setForeground(new java.awt.Color(255, 255, 255));
         btnGuardar.setText("Guardar");
+        btnGuardar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGuardarActionPerformed(evt);
+            }
+        });
 
         btnLimpiar.setBackground(new java.awt.Color(102, 153, 255));
         btnLimpiar.setForeground(new java.awt.Color(255, 255, 255));
         btnLimpiar.setText("Limpiar");
+        btnLimpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnLimpiarActionPerformed(evt);
+            }
+        });
 
         jLabel4.setFont(new java.awt.Font("Century Gothic", 0, 12)); // NOI18N
         jLabel4.setText("Contraseña : ");
@@ -146,6 +156,47 @@ public class FormRegistro extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtnombreActionPerformed
 
+    private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
+        
+    // 1. Obtener los valores de los txt
+    String nombre = txtnombre.getText();
+    String correo = txtcorreo.getText();
+    String contrasena = txtcontrasena.getText();
+    
+    //2. Validar que no envie vacíos a BD
+    if(nombre.isEmpty() || correo.isEmpty() || contrasena.isEmpty()){  // || = or, isEmpty() = está vacío?
+        JOptionPane.showMessageDialog(this, "Todos los campos son obligatorios", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+    
+    //3. Ejecutamos el Insert 
+    UserCRUD crud = new UserCRUD();
+    boolean status = crud.crearUsuario(nombre,correo, contrasena);
+    
+    //4. Notificamos status del Insert
+    if(status){
+         JOptionPane.showMessageDialog(this, "Usuario Guardado", "Exito", JOptionPane.INFORMATION_MESSAGE);
+    }else {
+         JOptionPane.showMessageDialog(this, "Usuario no se guardo", "Error", JOptionPane.ERROR_MESSAGE);
+       
+    }
+    
+    limpiarCampos();
+    
+    }//GEN-LAST:event_btnGuardarActionPerformed
+
+    private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
+        // TODO add your handling code here:
+        limpiarCampos();
+        
+    }//GEN-LAST:event_btnLimpiarActionPerformed
+       
+    private void limpiarCampos(){
+        txtnombre.setText("");
+        txtcorreo.setText("");
+        txtcontrasena.setText("");
+        
+    }
     /**
      * @param args the command line arguments
      */
