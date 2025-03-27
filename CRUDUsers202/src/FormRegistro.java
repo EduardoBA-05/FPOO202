@@ -53,7 +53,7 @@ public class FormRegistro extends javax.swing.JFrame {
         txtcontrasena = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("Century Gothic", 0, 24)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 102, 255));
@@ -157,18 +157,18 @@ public class FormRegistro extends javax.swing.JFrame {
     }//GEN-LAST:event_txtnombreActionPerformed
 
     private void btnGuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGuardarActionPerformed
-        
+
     // 1. Obtener los valores de los txt
     String nombre = txtnombre.getText();
     String correo = txtcorreo.getText();
     String contrasena = txtcontrasena.getText();
-    
+
     //2. Validar que no envie vacíos a BD
     if(nombre.isEmpty() || correo.isEmpty() || contrasena.isEmpty()){  // || = or, isEmpty() = está vacío?
         JOptionPane.showMessageDialog(this, "Todos los campos son obligatorios", "Error", JOptionPane.ERROR_MESSAGE);
         return;
     }
-    
+ 
     //3. Ejecutamos el Insert 
     UserCRUD crud = new UserCRUD();
     boolean status = crud.crearUsuario(nombre,correo, contrasena);
