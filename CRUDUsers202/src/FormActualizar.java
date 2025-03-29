@@ -146,8 +146,21 @@ public class FormActualizar extends javax.swing.JFrame {
     }//GEN-LAST:event_txtIdActionPerformed
 
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
-      
-        // TODO add your handling code here:
+      // Validación campos vacíos
+        if (txtId.getText().trim().isEmpty() || 
+        txtNombre.getText().trim().isEmpty() || 
+        txtCorreo.getText().trim().isEmpty() || 
+        txtContrasena.getText().trim().isEmpty()) {
+        
+        JOptionPane.showMessageDialog(
+            this, 
+            "Todos los campos son obligatorios", 
+            "Error", 
+            JOptionPane.ERROR_MESSAGE
+        );
+        return;
+    }
+        
         String opcion = JOptionPane.showInputDialog(
         this,
         "¿Confirmar cambios?\n1. Sí\n2. No\n3. Salir",
@@ -156,7 +169,7 @@ public class FormActualizar extends javax.swing.JFrame {
     );
 
     if (opcion == null || opcion.equals("3")) {
-        return; // Sale del método sin hacer cambios
+        return; 
     }
 
     switch(opcion) {
@@ -183,7 +196,13 @@ public class FormActualizar extends javax.swing.JFrame {
 
             
         case "2":
-            // Opción "No" - No hacer nada
+            // Opción "No"
+            JOptionPane.showMessageDialog(
+                this, 
+                "Operación cancelada", 
+                "Información", 
+                JOptionPane.INFORMATION_MESSAGE
+            );
             break;
             
         default:
