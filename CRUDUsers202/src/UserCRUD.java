@@ -86,4 +86,19 @@ public boolean actualizarUsuario(int id, String nom, String cor, String contra) 
     }
 } // actualizarUsuario
 
+
+
+public boolean eliminarUsuario(int id){
+    String sqlDelete = "DELETE FROM usuarios WHERE id = ?";
+    
+    try {
+        PreparedStatement ps = conexion.prepareStatement(sqlDelete);
+        ps.setInt(1, id);
+        return ps.executeUpdate() > 0;
+    } catch (SQLException e) {
+        System.out.println("Error al eliminar usuario: " + e.getMessage());
+        return false;
+    }
+    
+}
 }
